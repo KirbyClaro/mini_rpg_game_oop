@@ -19,3 +19,12 @@ def battle(player: Player, opponent: Enemy) -> None:
                 player.heal(20)
             case _:
                 print("Invalid choice — you hesitate and lose the turn.")
+                
+    if opponent.is_alive():
+            if opponent.decide_action() == "attack":
+                opponent.attack(player)
+            else:
+                opponent.heal(15)
+
+        print("\n" + "-" * 28 + "\n")
+
