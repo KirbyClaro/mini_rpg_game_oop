@@ -26,5 +26,11 @@ def battle(player: Player, opponent: Enemy) -> None:
             else:
                 opponent.heal(15)
 
-        print("\n" + "-" * 28 + "\n")
+    print("\n" + "-" * 28 + "\n")
+    
+    print("===== BATTLE OVER =====")
+    if player.is_alive():
+        print("🏆  You are victorious!")
+    else:
+        print("💀  You were defeated...")
 
