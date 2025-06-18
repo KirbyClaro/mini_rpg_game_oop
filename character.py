@@ -19,3 +19,7 @@ class Character:
         
     def take_damage(self, amount: int) -> None:
         self.health = max(self.health - amount, 0)
+        
+    def heal(self, amount: int) -> None:
+        self.health = min(self.health + amount, self.max_health)
+        print(f"{self.name} heals for {amount} HP.")
