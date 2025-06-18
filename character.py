@@ -16,3 +16,6 @@ class Character:
             print("⚡  Critical hit!")
         target.take_damage(damage)
         print(f"{self.name} attacks {target.name} for {damage:.0f} damage.")
+        
+    def take_damage(self, amount: int) -> None:
+        self.health = max(self.health - amount, 0)
