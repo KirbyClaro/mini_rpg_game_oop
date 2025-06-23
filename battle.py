@@ -10,6 +10,8 @@ def battle(player: Player, opponent: Enemy) -> None:
         player.status()
         opponent.status()
         print()
+        
+    print("---- Player Turn ----")
     
     match player.choose_action():
             case "1":
