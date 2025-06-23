@@ -8,18 +8,17 @@ class Character:
         self.attack_power = attack_power
         self.defense = defense
         
-    def attack(self, target: "Character") -> None:
-        """Deal damage to a target, with a 20 % crit chance."""
+    def attack(self, target):
         damage = max(0, self.attack_power - target.defense)
-        if random.random() < 0.20:   # crit!
+        if random.random() < 0.2:
             damage *= 2
-            print("⚡  Critical hit!")
+            print("⚡ Critical hit!")
         target.take_damage(damage)
-        print(f"{self.name} attacks {target.name} for {damage:.0f} damage.")
+        print(f"{self.name} attacks {target.name} for {damage:.0f} damage!")
         
-    def take_damage(self, amount: int) -> None:
-        self.health = max(self.health - amount, 0)
+    def take_damage(self, amount):
+        self.health = max(0, self.health - amount)
         
-    def heal(self, amount: int) -> None:
-        self.health = min(self.health + amount, self.max_health)
-        print(f"{self.name} heals for {amount} HP.")
+    def heal(self, amount):
+        self.health = min(self.max_health, self.health + amount)
+        print(f"{self.name} heals for {amount} HP!")
