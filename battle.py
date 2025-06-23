@@ -6,7 +6,6 @@ def battle(player: Player, opponent: Enemy) -> None:
     print("\n===== BATTLE START =====\n")
     
     while player.is_alive() and opponent.is_alive():
-        # status display
         player.status()
         opponent.status()
         print()
