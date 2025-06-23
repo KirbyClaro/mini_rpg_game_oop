@@ -22,3 +22,11 @@ class Character:
     def heal(self, amount):
         self.health = min(self.max_health, self.health + amount)
         print(f"{self.name} heals for {amount} HP!")
+        
+    def is_alive(self):
+        return self.health > 0
+
+    def status(self):
+        filled = int((self.health / self.max_health) * 20)
+        bar = "#" * filled + "-" * (20 - filled)
+        print(f"{self.name}: [{bar}] {self.health}/{self.max_health} HP")
